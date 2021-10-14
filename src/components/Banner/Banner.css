@@ -1,0 +1,26 @@
+.banner-container {
+    background-image: url('../../all-images/banner/background.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    width: 100%;
+}
+
+.banner-input {
+    padding: 8px 20px;
+    width: 400px;
+    border-radius: 20px 0 0 20px;
+    border: 1px solid rgb(204, 204, 204);
+    outline: none;
+}
+
+.banner-btn {
+    padding: 9px 30px;
+    background-color: hsl(348deg 95% 54%);
+    position: relative;
+    right: 24px;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+}
