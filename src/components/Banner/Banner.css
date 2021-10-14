@@ -10,7 +10,7 @@
 .banner-input {
     padding: 8px 20px;
     width: 400px;
-    border-radius: 20px 0 0 20px;
+    border-radius: 20px;
     border: 1px solid rgb(204, 204, 204);
     outline: none;
 }
@@ -19,7 +19,7 @@
     padding: 9px 30px;
     background-color: hsl(348deg 95% 54%);
     position: relative;
-    right: 24px;
+    right: 38px;
     border: none;
     border-radius: 20px;
     color: #fff;

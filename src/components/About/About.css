@@ -1,0 +1,14 @@
+/* .about-icon{
+    background-color: hsl(348deg 95% 54%);
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+} */
+
+.arrow{
+    background-color: hsl(348deg 95% 54%);;
+    border-radius: 50%;
+    padding: 5px;
+    color: #fff;
+    font-size: 10px;
+}
