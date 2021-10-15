@@ -1,41 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import useFirebase from '../../hooks/useFirebase';
+
 
 const Login = () => {
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
-    const auth = getAuth();
-
-
-    const handleChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
-    const handleChangePassword = (e) => {
-        setPassword(e.target.value);
-    }
-
-    const handleSubmitLogin = (e) => {
-        e.preventDefault()
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-
-            })
-            .catch(error => {
-                switch (error.message) {
-                    case 'Firebase: Error (auth/wrong-password).':
-                        error.message = "wrong-password"
-                        break;
-                    case 'Firebase: Error (auth/user-not-found).':
-                        error.message = "user-not-found."
-                        break;
-                }
-                setError(error.message)
-            })
-
-    }
+    const { handleSubmitLogin, handleChangeEmail, handleChangePassword, error } = useFirebase()
     return (
         <div className="container">
             <div className="w-25 mx-auto">
