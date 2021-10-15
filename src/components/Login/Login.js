@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 import useFirebase from '../../hooks/useFirebase';
 
 
 const Login = () => {
-    const { handleSubmitLogin, handleChangeEmail, handleChangePassword, error } = useFirebase()
+    const { handleSubmitLogin, handleChangeEmail, handleChangePassword, error } = useAuth()
     return (
         <div className="container">
             <div className="w-25 mx-auto">

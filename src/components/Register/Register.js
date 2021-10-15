@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initializeAuthentication from '../../Firebase/firebase.init';
 import useFirebase from '../../hooks/useFirebase';
+import useAuth from '../../hooks/useAuth';
 
 initializeAuthentication()
 const Register = () => {
 
-    const { handleSubmitButton, handleChangeName, handleChangeEmail, handleChangePassword, error } = useFirebase()
+    const { handleSubmitButton, handleChangeName, handleChangeEmail, handleChangePassword, error } = useAuth()
 
     return (
         <div className="container">
@@ -22,7 +23,7 @@ const Register = () => {
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Control type="email" placeholder="Email" className="bg-light" onBlur={handleChangeEmail} required />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
                         <Form.Control type="password" placeholder="Password" className="bg-light" onBlur={handleChangePassword} required />
                     </Form.Group>
                     <p className="text-danger">{error}</p>
