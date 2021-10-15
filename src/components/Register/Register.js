@@ -3,58 +3,12 @@ import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initializeAuthentication from '../../Firebase/firebase.init';
+import useFirebase from '../../hooks/useFirebase';
 
 initializeAuthentication()
 const Register = () => {
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [error, setError] = useState("")
-    const auth = getAuth();
 
-    const handleChangeName = (e) => {
-        setName(e.target.value);
-    }
-
-    const handleChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
-
-    const handleChangePassword = (e) => {
-        setPassword(e.target.value);
-    }
-
-
-    const handleSubmitButton = (e) => {
-        e.preventDefault()
-        createUserWithEmailAndPassword(auth, email, password)
-
-            .then(result => {
-                const user = result.user;
-                updateProfile(auth.currentUser, {
-                    displayName: name
-                }).then(() => {
-                    // Profile updated!
-                    // ...
-                }).catch((error) => {
-                    setError(error.message)
-                    // ...
-                });
-                console.log(user);
-
-            })
-            .catch(error => {
-                switch (error.message) {
-                    case 'Firebase: Error (auth/email-already-in-use).':
-                        error.message = "email-already-in-use"
-                        break;
-                    case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
-                        error.message = "Password must be at least 6 character."
-                        break;
-                }
-                setError(error.message)
-            })
-    }
+    const { handleSubmitButton, handleChangeName, handleChangeEmail, handleChangePassword, error } = useFirebase()
 
     return (
         <div className="container">
