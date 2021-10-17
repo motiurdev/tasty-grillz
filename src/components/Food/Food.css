@@ -1,0 +1,8 @@
+.order-btn {
+    background-color: hsl(348deg 95% 54%);
+    padding: 8px 30px;
+    border: none;
+    color: #fff;
+    border-radius: 15px;
+    border: 1px solid rgb(138, 1, 108);
+}

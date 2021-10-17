@@ -8,6 +8,7 @@ import Register from './components/Register/Register';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import AuthProvider from './context/AuthProvider';
+import DetailFood from './components/DetailFood/DetailFood';
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login></Login>
+          </Route>
+          <Route exact path="/foods/:foodId">
+            <DetailFood></DetailFood>
           </Route>
           <Route exact path="/register">
             <Register></Register>
